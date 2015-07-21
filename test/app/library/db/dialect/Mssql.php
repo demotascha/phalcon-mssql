@@ -614,6 +614,9 @@ class Mssql extends \Phalcon\Db\Dialect //implements \Phalcon\Db\DialectInterfac
            }
          */
         $sql = "exec sp_columns [$table]";
+        if ($schema) {
+            $sql = "exec sp_columns @table_name = '$table', @table_owner = '$schema'";
+        }
         return $sql;
     }
 
