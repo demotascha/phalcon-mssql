@@ -393,7 +393,7 @@ class Mssql extends AdapterPdo implements EventsAwareInterface, AdapterInterface
         }
         //var_dump($placeholders);
 
-        if (false) { //globals_get("db.escape_identifiers") {
+        if (is_array($table)) { //globals_get("db.escape_identifiers") {
             $escapedTable = $this->escapeIdentifier($table);
         } else {
             $escapedTable = $table;
@@ -473,7 +473,7 @@ class Mssql extends AdapterPdo implements EventsAwareInterface, AdapterInterface
             }
         }
 
-        if (false){//globals_get("db.escape_identifiers") {
+        if (is_array($table)){//globals_get("db.escape_identifiers") {
             $escapedTable = $this->escapeIdentifier($table);
         } else {
             $escapedTable = $table;
@@ -550,7 +550,7 @@ class Mssql extends AdapterPdo implements EventsAwareInterface, AdapterInterface
         $sql;
         $escapedTable;
 
-        if (false) { // globals_get("db.escape_identifiers") {
+        if (is_array($table)) { // globals_get("db.escape_identifiers") {
             $escapedTable = $this->escapeIdentifier($table);
         } else {
             $escapedTable = $table;
